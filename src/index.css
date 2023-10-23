@@ -3,3 +3,39 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+/* ?? what is the difference b/w app.css and index.css?? */
+
+/* !!! DOM/css ROAD MAP !!!
+ Div: web-display
+    h1
+    Div: id=task-body 
+        h3
+        <TaskList>
+            DIV: id=task-list
+                DIV: id=task-item
+                    p
+                    p
+                    button
+*/
+
+#web-display {
+  border: 15px solid black;
+}
+
+#task-body {
+  background-color: lightblue;
+  border: 2px solid blue;
+}
+
+#task-item {
+  border: green 2px solid;
+}
+
+button {
+  border: darkgoldenrod 2px solid;
+}
+
+p {
+  border: darkred 2px solid;
+}

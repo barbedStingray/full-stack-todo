@@ -1,12 +1,65 @@
+
+// *** IMPORTS 
+
 import {useState, useEffect} from 'react';
 import axios from 'axios';
+import TaskList from '../TaskList/TaskList.jsx';
+
+
+
+
+// *** APP FUNCTION START
 
 function App () {
 
+// set initial constant for your List of Tasks... set to empty array.
+  const [taskList, setTaskList] = useState([]);
+
+// create your axios GET client side function
+  function getTaskList () {
+    console.log(`GET /todo request made`);
+
+    // axios request
+    axios.get('/todo').then((response) => {
+      console.log('GET /todo Match! response.data:', response.data);
+
+    // set your constant
+      setTaskList(response.data);
+
+    // finish with the .catch
+    }).catch((error) => {
+      console.log('Error GET /todo', error);
+      alert(`GET /todo did not find a server match!`);
+    });
+  }
+
+// call your function
+// remember this takes two objects (don't forget empty array)
+  useEffect(() => {
+    getTaskList();
+  }, []);
+
+
+// return to populate DOM
+// todo Replace h1 with header component
+// todo Replace JSON string with component
+
   return (
-    <div>
+    <div id="web-display">
+      {/* ! Replace with your header component */}
       <h1>TO DO APP</h1>
+
+      <div id="task-body">
+        <h3>This is the Task Body</h3>
+                
+        <TaskList list={taskList} />
+
+      </div>
+
+
     </div>
+
+    
   );
 
 }

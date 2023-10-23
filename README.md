@@ -43,27 +43,31 @@ npm start
             - preventDefault()
 
  - [ ] display all tasks on DOM
-        [ ] Populate the DOM
-            - GET request
-            - display of SQL table
+        [X] Populate the DOM
+            x GET request
+            x display of SQL table
         [ ] display task on DOM
-            - Title Display
+            x Title Display
+            x make delete button
+            - make complete button
             - Priority Display
             - Description (hover?)
             [ ] Complete Button
+                - make button
                 - PUT request to server
                 - visual indication of complete
             [ ] Delete Button
-                - DELETE request to server
-                - remove from Database
+                x DELETE request to server
+                x remove from Database
+                - repopulate dom after delete
 
 // *********   SERVER SIDE   ************ //
 
 [ ] Develop Database
     [ ] table with desired columns
-        - task name
-        - date entered
-        - complete
+        x task name
+        x date entered
+        x complete
         
 [ ] GET queries can VIEW database
 [ ] POST queries can ADD TO database
