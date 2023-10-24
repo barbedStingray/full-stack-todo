@@ -10,6 +10,7 @@ function TaskForm (props) {
 // create your variables
     const [nameTask, setNameTask] = useState('');
     const [dateTask, setDateTask] = useState('');
+    const [priorityTask, setPriorityTask] = useState('');
 
 
 // *** POST FUNCTION
@@ -21,11 +22,13 @@ function TaskForm (props) {
     // verification of variable
         console.log(`in sendTaskToServer`, nameTask);
         console.log(`in sendTaskToServer`, dateTask);
+        console.log(`in sendTaskToServer`, priorityTask);
 
     // object to be passed
         let taskObject = {
             title: nameTask,
-            date: dateTask
+            date: dateTask,
+            priority: priorityTask
         };
         console.log(`taskObject:`, taskObject);
 
@@ -35,10 +38,12 @@ function TaskForm (props) {
     // clear your inputs, objects and variables
         setNameTask('');
         setDateTask('');
+        // setPriorityTask(''); // clears the variable, but does not reset select
 
         taskObject = {
             title: '',
-            date: ''
+            date: '',
+            priority: ''
         }
         console.log(`cleared taskObject:`, taskObject);
 
@@ -69,6 +74,15 @@ function TaskForm (props) {
                             placeholder={'10/24/2023'}
                         />
                 <p>{dateTask}</p>
+                Priority: <select 
+                            placeholder={'priority'}
+                            onChange={(e) => setPriorityTask(e.target.value)}
+                            >
+                                <option value={''}>Select One...</option>
+                                <option value={'high'}>High</option>
+                                <option value={'low'}>Low</option>
+                        </select>
+                <p>{priorityTask}</p>
                 <button>Add Task</button>
             </form>
 

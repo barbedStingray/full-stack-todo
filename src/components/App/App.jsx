@@ -5,7 +5,7 @@ import {useState, useEffect} from 'react';
 import axios from 'axios';
 import TaskList from '../TaskList/TaskList.jsx';
 import TaskForm from '../TaskForm/TaskForm.jsx';
-
+import Header from '../Header/Header.jsx';
 
 
 
@@ -47,8 +47,8 @@ function App () {
 
   return (
     <div id="web-display">
-      {/* ! Replace with your header component */}
-      <h1>TO DO APP</h1>
+      
+      <Header />
 
       <TaskForm getTaskList={getTaskList} />
 

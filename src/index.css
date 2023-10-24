@@ -8,35 +8,46 @@ body {
 
 /* !!! DOM/css ROAD MAP !!!
  Div: web-display
-    h1
+    Div: id=task-header
     Div: id=task-form
     Div: id=task-body 
         h3
         <TaskList>
             DIV: id=task-list
                 DIV: id=task-item
-                    p
-                    p
-                    button
+                    p title
+                    p priority
+                    p date
+                    button complete
+                    button delete
 */
 
 #web-display {
   border: 15px solid black;
 }
 
-#task-body {
-  background-color: lightblue;
-  border: 2px solid blue;
-}
+      #task-header {
+        border: pink 2px solid;
+        background-color: lightpink;
+      }
 
-#task-item {
-  border: green 2px solid;
-}
+      #task-form {
+        border: lime 2px solid;
+        background-color: lightgreen;
+      }
 
-button {
-  border: darkgoldenrod 2px solid;
-}
+      #task-body {
+        background-color: lightblue;
+        border: 2px solid blue;
+      }
 
-p {
-  border: darkred 2px solid;
-}
+            #task-item {
+              border: green 2px solid;
+            }
+
+                  p {
+                    border: darkred 2px solid;
+                  }
+                  button {
+                    border: darkgoldenrod 2px solid;
+                  }

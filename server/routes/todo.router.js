@@ -40,12 +40,12 @@ router.post('/', (req, res) => {
     console.log(`/todo POST found, req.body:`, req.body);
 
     let queryText = `
-    INSERT INTO "taskdata" ("title", "date")
-    VALUES ($1, $2);
+    INSERT INTO "taskdata" ("title", "date", "priority")
+    VALUES ($1, $2, $3);
     `;
 
     // access database
-    pool.query(queryText, [req.body.title, req.body.date])
+    pool.query(queryText, [req.body.title, req.body.date, req.body.priority])
         .then((result) => {
             console.log(`/todo POST success`);
             res.sendStatus(201);
