@@ -7,6 +7,10 @@ const pool = require('../modules/pool.js');
 
 
 
+
+
+
+
 // *** GET response
 
 // draws data from SQL to the Server, passes data to Client
@@ -26,9 +30,44 @@ router.get('/', (req, res) => {
     })
 })
 
-// POST response
+
+
+
+
+// *** POST response
+
+router.post('/', (req, res) => {
+    console.log(`/todo POST found, req.body:`, req.body);
+
+    let queryText = `
+    INSERT INTO "taskdata" ("title", "date")
+    VALUES ($1, $2);
+    `;
+
+    // access database
+    pool.query(queryText, [req.body.title, req.body.date])
+        .then((result) => {
+            console.log(`/todo POST success`);
+            res.sendStatus(201);
+        }).catch((error) => {
+            console.log(`/todo POST error`, error);
+            res.sendStatus(500);
+        });
+});
+
+
+
+
+
+
+
 
 // PUT response
+
+
+
+
+
 
 
 

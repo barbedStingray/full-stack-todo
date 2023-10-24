@@ -8,14 +8,18 @@ import TaskItem from '../TaskItem/TaskItem.jsx';
 function TaskList(props) {
 
     
-
     // return necessary when using curly brackets
     // using .map to "for of" loop through each task of the taskList
     // in the loop, assign the props to be passed down to TaskItem component
     return (
     <div id="task-list">
             {
-                props.list.map((task) => (<TaskItem key={task.id} task={task.title} date={task.date} tag={task.id} />))
+                props.list.map((task) => 
+                (<TaskItem 
+                    key={task.id} 
+                    task={task} 
+                    getTaskList={props.getTaskList} 
+                />))
             }
     </div>
     )

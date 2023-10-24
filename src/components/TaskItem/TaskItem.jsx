@@ -11,23 +11,25 @@ function TaskItem(props) {
 
 // PUT COMPLETE button execution
     const completeHandler = () => {
-        console.log(`COMPLETE put /todo request for ${props.task}`);
+        console.log(`COMPLETE put /todo request for ${props.task.title}`);
 
         // todo axios PUT request
         // todo refresh the DOM
+
     }
 
 
 // DELETE button execution
     const deleteHandler = () => {
-        console.log(`DELETE /todo request for ${props.task}`);
+        console.log(`DELETE /todo request for ${props.task.title}`);
 
         // run your axios request based on props.key
-        axios.delete(`/todo/${props.tag}`).then(() => {
+        axios.delete(`/todo/${props.task.id}`).then(() => {
             console.log(`Delete /todo success!`);
 
 
-        // todo refresh the dom here
+        // refresh the dom here
+            props.getTaskList();
 
 
         }).catch((error) => {
@@ -41,8 +43,8 @@ function TaskItem(props) {
 // return necessary with curly brackets
     return (
         <div id="task-item">
-            <p>{props.task}</p>
-            <p>{props.date}</p>
+            <p>{props.task.title}</p>
+            <p>{props.task.date}</p>
             <button id="complete-btn" onClick={completeHandler}>Complete!</button>
             <button id="delete-btn" onClick={deleteHandler}>X</button>
         </div>

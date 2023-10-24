@@ -4,6 +4,7 @@
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 import TaskList from '../TaskList/TaskList.jsx';
+import TaskForm from '../TaskForm/TaskForm.jsx';
 
 
 
@@ -42,17 +43,19 @@ function App () {
 
 // return to populate DOM
 // todo Replace h1 with header component
-// todo Replace JSON string with component
+// todo creat TaskForm Component for manipulation
 
   return (
     <div id="web-display">
       {/* ! Replace with your header component */}
       <h1>TO DO APP</h1>
 
+      <TaskForm getTaskList={getTaskList} />
+
       <div id="task-body">
         <h3>This is the Task Body</h3>
                 
-        <TaskList list={taskList} />
+        <TaskList list={taskList} getTaskList={getTaskList} />
 
       </div>
 
