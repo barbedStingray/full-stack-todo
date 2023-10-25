@@ -11,7 +11,7 @@ const pool = require('../modules/pool.js');
 
 
 
-// *** GET response
+// *** GET response /todo
 
 // draws data from SQL to the Server, passes data to Client
 router.get('/', (req, res) => {
@@ -27,8 +27,25 @@ router.get('/', (req, res) => {
     }).catch((error) => {
         console.log('Error GET /todo server/SQL connection');
         res.sendStatus(500);
-    })
-})
+    });
+});
+
+// *** GET response /todo/priority
+router.get('/priority', (req, res) => {
+    console.log('GET /priority request made');
+
+    // SQL query text
+    let queryText = `SELECT * FROM "taskdata" ORDER BY "priority" ASC;`;
+
+    pool.query(queryText).then((result) => {
+        console.log('GET /priority success!');
+        res.send(result.rows);
+
+    }).catch((error) => {
+        console.log(`GET /priority error`, error);
+        res.sendStatus(500);
+    });
+});
 
 
 

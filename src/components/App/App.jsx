@@ -16,23 +16,25 @@ function App () {
 // set initial constant for your List of Tasks... set to empty array.
   const [taskList, setTaskList] = useState([]);
 
+
 // create your axios GET client side function
   function getTaskList () {
     console.log(`GET /todo request made`);
 
     // axios request
-    axios.get('/todo').then((response) => {
-      console.log('GET /todo Match! response.data:', response.data);
+        axios.get('/todo').then((response) => {
+          console.log('GET /todo Match! response.data:', response.data);
 
     // set your constant
-      setTaskList(response.data);
+          setTaskList(response.data);
 
     // finish with the .catch
-    }).catch((error) => {
-      console.log('Error GET /todo', error);
-      alert(`GET /todo did not find a server match!`);
-    });
-  }
+        }).catch((error) => {
+          console.log('Error GET /todo', error);
+          alert(`GET /todo did not find a server match!`);
+        });
+      }
+  
 
 // call your function
 // remember this takes two objects (don't forget empty array)
@@ -42,8 +44,6 @@ function App () {
 
 
 // return to populate DOM
-// todo Replace h1 with header component
-// todo creat TaskForm Component for manipulation
 
   return (
     <div id="web-display">
