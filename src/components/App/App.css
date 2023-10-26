@@ -1,34 +1,101 @@
-.App {
-  text-align: center;
+
+/* !!! DOM/css ROAD MAP !!!
+ Div: web-display
+    Div: id=task-header
+    Div: id=task-form
+    Div: id=task-body 
+        h3
+        <TaskList>
+            DIV: id=task-list
+                DIV: id=task-item
+                    p title
+                    p priority
+                    p date
+                    button complete
+                    button delete
+*/
+
+
+#web-display {
+  border: 15px solid black;
 }
 
-.App-header {
-  background-color: #222;
-  height: 70px;
-  padding: 20px;
-  color: white;
-}
+      #task-header {
+        border: pink 2px solid;
+        background-color: rgb(239, 238, 238);
+      }
 
-.App-title {
-  font-size: 1.5em;
-}
+      #task-form {
+        border: lime 2px solid;
+        background-color: rgb(178, 178, 178);
+      }
 
-.App-intro {
-  font-size: large;
-}
+      #task-body {
+        background-color: rgb(113, 113, 113);
+        border: 2px solid blue;
+      }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+            #task-item {
+              border: green 2px solid;
+            }
 
-/* @font-face {
-  font-family: witchHunt;
-  src: url(witch.otf);
-}
+                  p {
+                    border: darkred 2px solid;
+                  }
+                  button {
+                    border: darkgoldenrod 2px solid;
+                  }
 
-p {
-  font-family: witchHunt;
+            @font-face {
+              font-family: witch-Hunt;
+              src: url(../../fonts/Witch.ttf);                  }
+                  
+            h1 {
+              font-family: witch-Hunt;
+            
+            }
 
-} */
 
+
+
+
+
+  /* modal stuff */
+
+  .open-button {
+    background-color: #555;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 280px;
+  }
+  
+  /* css to hide your form */
+  .hideWindow {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+  }
+
+  /* css to diplay your form as a pop up */
+  .viewWindow {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+  }
+  
+  
+  
+  
+  

@@ -34,7 +34,11 @@ function TaskForm (props) {
 
     // clear your inputs, objects and variables
         setNameTask('');
-        // setPriorityTask(''); // clears the variable, but does not reset select
+
+    // make your form Disappear
+        props.setPopUpWindow(false);
+
+    // setPriorityTask(''); // clears the variable, but does not reset select
 
         taskObject = {
             title: '',
@@ -54,7 +58,7 @@ function TaskForm (props) {
     }
 
     return (
-        <div id="task-form">
+        <div className={props.popUpWindow ? 'revealWindow' : 'hideWindow'} id="witch-form">
             <h2>Task Form:</h2>
             <form onSubmit={sendTaskToServer}>
                 Title: <input 
@@ -74,6 +78,8 @@ function TaskForm (props) {
                 <p>{priorityTask}</p>
                 <button>Add Task</button>
             </form>
+            <button type="button" onClick={props.formDisappear}>X</button>
+
 
         </div>
     )
