@@ -28,16 +28,16 @@ body {
 
       #task-header {
         border: pink 2px solid;
-        background-color: lightpink;
+        background-color: rgb(239, 238, 238);
       }
 
       #task-form {
         border: lime 2px solid;
-        background-color: lightgreen;
+        background-color: rgb(178, 178, 178);
       }
 
       #task-body {
-        background-color: lightblue;
+        background-color: rgb(113, 113, 113);
         border: 2px solid blue;
       }
 

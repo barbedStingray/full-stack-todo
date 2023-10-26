@@ -21,3 +21,14 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+/* @font-face {
+  font-family: witchHunt;
+  src: url(witch.otf);
+}
+
+p {
+  font-family: witchHunt;
+
+} */
+

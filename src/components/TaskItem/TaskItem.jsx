@@ -45,7 +45,7 @@ function TaskItem(props) {
         <div id="task-item">
             <p>{props.task.title}</p>
             <p>{props.task.priority}</p>
-            <p>{props.task.date}</p>
+            {/* <p>{props.task.date}</p> */}
             <button id="complete-btn" onClick={completeHandler}>Complete!</button>
             <button id="delete-btn" onClick={deleteHandler}>X</button>
         </div>

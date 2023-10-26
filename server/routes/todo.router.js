@@ -11,6 +11,11 @@ const pool = require('../modules/pool.js');
 
 
 
+
+
+
+
+
 // *** GET response /todo
 
 // draws data from SQL to the Server, passes data to Client
@@ -47,6 +52,31 @@ router.get('/priority', (req, res) => {
     });
 });
 
+// *** GET response /todo/alphabetAsc
+router.get('/alphabetAsc', (req, res) => {
+    console.log(`GET /alphabetAsc request`);
+
+    let queryText = `SELECT * FROM "taskdata" ORDER BY "title" ASC;`;
+
+    pool.query(queryText).then((result) => {
+        console.log(`GET /alphabetAsc success!`);
+        res.send(result.rows);
+
+    }).catch((error) => {
+        console.log(`GET /alphabetAsc error`, error);
+        res.sendStatus(500);
+    });
+});
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -57,12 +87,12 @@ router.post('/', (req, res) => {
     console.log(`/todo POST found, req.body:`, req.body);
 
     let queryText = `
-    INSERT INTO "taskdata" ("title", "date", "priority")
-    VALUES ($1, $2, $3);
+    INSERT INTO "taskdata" ("title", "priority")
+    VALUES ($1, $2);
     `;
 
     // access database
-    pool.query(queryText, [req.body.title, req.body.date, req.body.priority])
+    pool.query(queryText, [req.body.title, req.body.priority])
         .then((result) => {
             console.log(`/todo POST success`);
             res.sendStatus(201);
@@ -80,6 +110,10 @@ router.post('/', (req, res) => {
 
 
 // PUT response
+
+
+
+
 
 
 
