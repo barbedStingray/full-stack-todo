@@ -14,56 +14,102 @@
 
 
 #web-display {
-  border: 15px solid lightblue;
+  /* border: 15px solid lightblue; */
   background-image: url(../../Photos/spookyForestTwo.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
 
 }
 
       #task-header {
-        border: pink 2px solid;
+        /* border: pink 2px solid; */
         display: flex;
         flex-direction: row;
         margin-left: 5%;
         margin-right: 5%;
+        margin-top: 5%;
       }
-            h1 {
-              font-family: witch-hunt;
-              color: orangered;
-              letter-spacing: 4px;
-              font-size: 60px;
-              margin-left: 10%;
-              margin-top: 0px;
-              margin-bottom: 0px;
-              border: 2px solid orange;
+            #title-words {
+              /* border: 2px solid orange; */
               flex-grow: 10;
             }
+                  h1 {
+                    font-family: witch-hunt;
+                    color: orangered;
+                    letter-spacing: 4px;
+                    font-size: 60px;
+                    margin-top: 0px;
+                    margin-bottom: -7%;
+                    /* border: 2px solid red; */
+                  }
+                  h5 {
+                    font-family: witch-hunt;
+                    /* border: 2px solid red; */
+                    color: silver;
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                    margin-left: 30%;
+                    font-size: 20px;
+                  }
             #header-buttons {
               display: flex;
               flex-direction: column;
-              border: 2px solid green;  
+              /* border: 2px solid green;   */
               flex-grow: 2;
               justify-content: flex-end;
             }
                   #priority-btn {
-                    border: 2px solid orange;
+                    border: 1px solid rgb(0, 0, 0, 0);
+                    color: whitesmoke;
+                    border-radius: 7px;
+                    background-color: rgb(0, 0, 0, 0);
+                    height: 30px;
+                    font-size: 12px;
                     /* align-self: center; */
                     /* flex-basis: 1; */
                   }
+                      #priority-btn:hover {
+                        color: black;
+                        background-image: linear-gradient(rgb(245, 245, 245, 0), rgb(245, 245, 245, 0.8));
+                      }
+
                   #alphabetical-btn {
-                    border: 2px solid orange;
+                    border: 1px solid rgb(0, 0, 0, 0);
+                    border-radius: 7px;
+                    background-color: rgb(0, 0, 0, 0);
+                    color: whitesmoke;
+                    height: 30px;
+                    font-size: 12px;
                     /* align-self: center; */
                     /* flex-basis: 1; */
                   }
+                      #alphabetical-btn:hover {
+                        color: black;
+                        background-image: linear-gradient(rgb(245, 245, 245, 0), rgb(245, 245, 245, 0.8));
+                      }
+
                   #add-task {
-                    border: 2px solid orange;
+                    border: 1px solid rgb(0, 0, 0, 0);
+                    border-radius: 7px;
+                    background-color: rgb(0, 0, 0, 0);
+                    color: orangered;
+                    font-size: 12px;
+                    height: 30px;
+
                     /* align-self: center; */
                     /* flex-basis: 1; */
                   }
+                      #add-task:hover {
+                        color: whitesmoke;
+                        background-image: linear-gradient(rgb(97, 5, 5, 0), orangered);
+
+                      }
+                
 
       #task-list {
-        border: lime 2px solid;
+        /* border: lime 2px solid; */
         display: flex;
         flex-direction: column;
       }
@@ -98,54 +144,92 @@
                         }
 
                   #complete-btn {
-                    border: rgb(230, 217, 32) 2px solid;
-                    flex-grow: 0;
-                  }
-                  #delete-btn {
-                    border: rgb(198, 107, 17) 2px solid;
+                    border: rgb(0, 0, 0, 0);
+                    background-color: rgb(0, 0, 0, 0);
+                    color: rgb(53, 205, 53);
+                    font-size: 12px;
+                    width: 100px;
+                    height: 30px;
                     flex-grow: 0;
                     margin-right: 5%;
+                    border-radius: 7px;
                   }
+                      #complete-btn:hover {
+                        background-image: linear-gradient(rgba(3, 50, 3, 0), rgba(5, 142, 5, 0.8));
+                        color: whitesmoke;
+                      }
+
+                  #delete-btn {
+                    border: rgb(0, 0, 0, 0);
+                    background-color: rgb(0, 0, 0, 0);
+                    color: orangered;
+                    font-size: 12px;
+                    width: 40px;
+                    height: 25px;
+                    flex-grow: 0;
+                    margin-right: 5%;
+                    border-radius: 7px;
+                  }
+                      #delete-btn:hover {
+                        background-image: linear-gradient(rgba(3, 50, 3, 0), rgba(122, 11, 11, 0.8));
+
+                      }
 
                   
 
   /* modal stuff */
 
-  .open-button {
-    background-color: #555;
-    color: white;
-    padding: 16px 20px;
-    border: none;
-    cursor: pointer;
-    opacity: 0.8;
-    position: fixed;
-    bottom: 23px;
-    right: 28px;
-    width: 280px;
-  }
   
   /* css to hide your form */
-  .hideWindow {
+  .hideFormWindow {
     display: none;
     position: fixed;
-    bottom: 0;
-    right: 15px;
-    border: 3px solid #f1f1f1;
-    z-index: 1;
+    /* bottom: 0; */
+    /* right: 15px; */
+    border: 5px solid lightblue;
+    /* z-index: 1; */
   }
 
   /* css to diplay your form as a pop up */
-  .revealWindow {
-    display: block;
+  /* This is the witch-form DIV */
+  .revealFormWindow {
+    display: flex;
+    flex-direction: column;
     position: fixed;
-    bottom: 0;
-    right: 15px;
-    border: 3px solid yellow;
-    z-index: 5;
+    /* width: 80%;
+    height: 10%; */
+    /* bottom: 0; */
+    top: 5%;
+    left: 47%;
+    border: 3px solid purple;
+    width: 30%;
+    /* z-index: 5; */
     background-color: darkcyan;
-    
   }
-  
+        #form-heading {
+          color: blue;
+          border: 2px solid pink;
+        }
+        #form-entries {
+          display: flex;
+          border: 2px solid greenyellow
+          /* flex-direction: column; */
+
+        }
+              #input-nameTask {
+                flex-direction: row;
+                color: blue;
+                border: 2px solid black;
+              }
+              #input-priorityTask {
+                border: 2px solid black;
+
+              }
+
+        #disappear-btn {
+          border: 2px solid black;
+
+        }
   
   
   

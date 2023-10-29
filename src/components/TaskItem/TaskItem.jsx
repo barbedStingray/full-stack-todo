@@ -16,6 +16,7 @@ function TaskItem(props) {
 
         // PUT request
         // no object to pass
+        console.log(props.task.id);
         axios.put(`/todo/${props.task.id}`).then((response) => {
             console.log('success in PUT complete:', props.task.complete);
 
@@ -58,7 +59,7 @@ function TaskItem(props) {
                 <p><span id="span-color">Priority:</span> {props.task.priority}</p>
             </div>
             {/* <p>{props.task.date}</p> */}
-            <button id="complete-btn" onClick={completeHandler}>Complete!</button>
+            <button id="complete-btn" onClick={completeHandler}>Mark Complete</button>
             <button id="delete-btn" onClick={deleteHandler}>X</button>
         </div>
     )

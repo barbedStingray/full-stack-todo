@@ -7,6 +7,7 @@ import TaskList from '../TaskList/TaskList.jsx';
 import TaskForm from '../TaskForm/TaskForm.jsx';
 import Header from '../Header/Header.jsx';
 import './App.css';
+import Footer from '../Footer/Footer.jsx';
 
 
 
@@ -74,21 +75,11 @@ function App () {
 
 // form window
 
-function formAppear() {
-  console.log(`opening form`);
-
-  setPopUpWindow(true);
-  console.log(`pop window:`, popUpWindow);
-
-  // document.getElementById("#witch-form").style.display = "block";
-}
 function formDisappear() {
   console.log(`closing form`);
 
   setPopUpWindow(false);
   console.log(`pop window:`, popUpWindow);
-
-  // document.getElementById("#witch-form").style.display = "none";
 }
 
 
@@ -104,10 +95,9 @@ function formDisappear() {
           sortingHat={sortingHat} 
           setSortingHat={setSortingHat}
           getTaskList={getTaskList}
+          popUpWindow={popUpWindow}
+          setPopUpWindow={setPopUpWindow}
       />
-
-      <button className="open-button" onClick={formAppear}>+Task</button>
-
       
       <TaskForm getTaskList={getTaskList}
                 popUpWindow={popUpWindow}
@@ -116,6 +106,8 @@ function formDisappear() {
       />
 
       <TaskList list={taskList} getTaskList={getTaskList} />
+
+      <Footer />
 
     </div>
 
