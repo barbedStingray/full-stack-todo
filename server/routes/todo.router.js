@@ -111,7 +111,24 @@ router.post('/', (req, res) => {
 
 // PUT response
 
+router.put('/:id', (res, req) => {
+    console.log('PUT /todo complete change', req.params);
 
+    let queryText = `
+        UPDATE "taskdata"
+        SET "complete" = NOT "complete"
+        WHERE "id" = $1;
+    `;
+
+    pool.query(queryText, [req.params.id])
+        .then((result) => {
+            console.log('success in PUT complete');
+            res.sendStatus(200);
+        }).catch((error) => {
+            console.log('error in PUT complete', error);
+            res.sendStatus(500);
+        });
+});
 
 
 

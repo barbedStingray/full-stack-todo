@@ -72,7 +72,7 @@ function App () {
 
 
 
-// modal Form Window
+// form window
 
 function formAppear() {
   console.log(`opening form`);
@@ -94,7 +94,6 @@ function formDisappear() {
 
 
 
-  
 
 // return to populate DOM
 
@@ -107,7 +106,7 @@ function formDisappear() {
           getTaskList={getTaskList}
       />
 
-      <button className="open-button" onClick={formAppear}>Open Form</button>
+      <button className="open-button" onClick={formAppear}>+Task</button>
 
       
       <TaskForm getTaskList={getTaskList}
@@ -116,11 +115,7 @@ function formDisappear() {
                 formDisappear={formDisappear} 
       />
 
-      <div id="task-body">
-                        
-        <TaskList list={taskList} getTaskList={getTaskList} />
-
-      </div>
+      <TaskList list={taskList} getTaskList={getTaskList} />
 
     </div>
 
@@ -128,21 +123,5 @@ function formDisappear() {
   );
 
 }
-
-// modal component
-{/* <button onClick="document.getElementById('id01').style.display='block'"
-className="w3-button">Open Modal</button>
-
-<div id="id01" className="w3-modal">
-  <div className="w3-modal-content">
-    <div className="w3-container">
-      <span onClick="document.getElementById('id01').style.display='none'" 
-      className="w3-button w3-display-topright">&times;</span>
-      <p>Some text in the Modal..</p>
-      <p>Some text in the Modal..</p>
-    </div>
-  </div>
-</div> */}
-
 
 export default App

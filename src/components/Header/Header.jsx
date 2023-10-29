@@ -33,10 +33,10 @@ function Header(props) {
     return (
         <div id="task-header">
             <h1>Witch Hunt</h1>
-            <button onClick={sortingByPriority}>Sort Priority</button>
-            <button onClick={sortingByAlphabetAsc}>Sort A to Z</button>
-            <button onClick={sortingByDate}>Sort Date</button>
-            <button>+Task</button>
+            <div id="header-buttons">
+                <button id="priority-btn" onClick={sortingByPriority}>Sort Priority</button>
+                <button id="alphabetical-btn" onClick={sortingByAlphabetAsc}>Sort A to Z</button>
+            </div>
         </div>
     )
 }

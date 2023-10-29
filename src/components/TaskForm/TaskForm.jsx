@@ -58,29 +58,30 @@ function TaskForm (props) {
     }
 
     return (
-        <div className={props.popUpWindow ? 'revealWindow' : 'hideWindow'} id="witch-form">
-            <h2>Task Form:</h2>
-            <form onSubmit={sendTaskToServer}>
-                Title: <input 
-                            value={nameTask} 
-                            onChange={(e) => setNameTask(e.target.value)} 
-                            placeholder={'your task here...'} 
-                        />
-                <p>{nameTask}</p>
-                Priority: <select 
-                            // placeholder={'priority'}
-                            onChange={(e) => setPriorityTask(e.target.value)}
-                            >
-                                <option value={''}>Select One...</option>
-                                <option value={'high'}>High</option>
-                                <option value={'low'}>Low</option>
-                        </select>
-                <p>{priorityTask}</p>
-                <button>Add Task</button>
-            </form>
-            <button type="button" onClick={props.formDisappear}>X</button>
-
-
+        <div>
+            
+            <div className={props.popUpWindow ? 'revealWindow' : 'hideWindow'} id="witch-form">
+                <h2>Task Input:</h2>
+                <form onSubmit={sendTaskToServer}>
+                    Title: <input 
+                                value={nameTask} 
+                                onChange={(e) => setNameTask(e.target.value)} 
+                                placeholder={'your task here...'} 
+                            />
+                    <p>{nameTask}</p>
+                    Priority: <select 
+                                // placeholder={'priority'}
+                                onChange={(e) => setPriorityTask(e.target.value)}
+                                >
+                                    <option value={''}>Select One...</option>
+                                    <option value={'high'}>High</option>
+                                    <option value={'low'}>Low</option>
+                            </select>
+                    <p>{priorityTask}</p>
+                    <button>Post Task</button>
+                </form>
+                <button type="button" onClick={props.formDisappear}>X</button>
+            </div>
         </div>
     )
 }

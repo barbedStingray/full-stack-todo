@@ -1,64 +1,113 @@
 
-/* !!! DOM/css ROAD MAP !!!
- Div: web-display
-    Div: id=task-header
-    Div: id=task-form
-    Div: id=task-body 
-        h3
-        <TaskList>
-            DIV: id=task-list
-                DIV: id=task-item
-                    p title
-                    p priority
-                    p date
-                    button complete
-                    button delete
-*/
+
+/* IMPORTS */
+@font-face {
+  font-family: witch-hunt;
+  src: url(../../fonts/Witch.ttf);                
+  }
+
+@font-face {
+  font-family: halloween;
+  src: url(../../fonts/HelpMe.ttf);
+}
+
 
 
 #web-display {
-  border: 15px solid black;
+  border: 15px solid lightblue;
+  background-image: url(../../Photos/spookyForestTwo.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+
 }
 
       #task-header {
         border: pink 2px solid;
-        background-color: rgb(239, 238, 238);
+        display: flex;
+        flex-direction: row;
+        margin-left: 5%;
+        margin-right: 5%;
       }
+            h1 {
+              font-family: witch-hunt;
+              color: orangered;
+              letter-spacing: 4px;
+              font-size: 60px;
+              margin-left: 10%;
+              margin-top: 0px;
+              margin-bottom: 0px;
+              border: 2px solid orange;
+              flex-grow: 10;
+            }
+            #header-buttons {
+              display: flex;
+              flex-direction: column;
+              border: 2px solid green;  
+              flex-grow: 2;
+              justify-content: flex-end;
+            }
+                  #priority-btn {
+                    border: 2px solid orange;
+                    /* align-self: center; */
+                    /* flex-basis: 1; */
+                  }
+                  #alphabetical-btn {
+                    border: 2px solid orange;
+                    /* align-self: center; */
+                    /* flex-basis: 1; */
+                  }
+                  #add-task {
+                    border: 2px solid orange;
+                    /* align-self: center; */
+                    /* flex-basis: 1; */
+                  }
 
-      #task-form {
+      #task-list {
         border: lime 2px solid;
-        background-color: rgb(178, 178, 178);
-      }
-
-      #task-body {
-        background-color: rgb(113, 113, 113);
-        border: 2px solid blue;
+        display: flex;
+        flex-direction: column;
       }
 
             #task-item {
-              border: green 2px solid;
+              /* border: green 2px solid; */
+              /* background-color: rgba(103, 81, 50, 0.3); */
+              background-color: rgba(120, 132, 185, 0.3);
+              display: flex;
+              border-radius: 10px;
+              margin-top: 2%;
+              margin-left: 10%;
+              margin-right: 10%;
+              justify-content: space-evenly;
+              align-items: center;
             }
 
-                  p {
-                    border: darkred 2px solid;
+                  #p-tags {
+                    /* border: blue solid 2px; */
+                    flex-grow: 1;
+                    margin-left: 5%;
+                    /* font-family: halloween; */
                   }
-                  button {
-                    border: darkgoldenrod 2px solid;
+                        p {
+                          /* border: darkred 2px solid; */
+                          color: orange;
+                          margin-top: 1%;
+                          margin-bottom: 1%;
+                        }
+                        #span-color {
+                          color: darkred;
+                        }
+
+                  #complete-btn {
+                    border: rgb(230, 217, 32) 2px solid;
+                    flex-grow: 0;
+                  }
+                  #delete-btn {
+                    border: rgb(198, 107, 17) 2px solid;
+                    flex-grow: 0;
+                    margin-right: 5%;
                   }
 
-            @font-face {
-              font-family: witch-Hunt;
-              src: url(../../fonts/Witch.ttf);                  }
                   
-            h1 {
-              font-family: witch-Hunt;
-            
-            }
-
-
-
-
-
 
   /* modal stuff */
 
@@ -82,17 +131,19 @@
     bottom: 0;
     right: 15px;
     border: 3px solid #f1f1f1;
-    z-index: 9;
+    z-index: 1;
   }
 
   /* css to diplay your form as a pop up */
-  .viewWindow {
+  .revealWindow {
     display: block;
     position: fixed;
     bottom: 0;
     right: 15px;
-    border: 3px solid #f1f1f1;
-    z-index: 9;
+    border: 3px solid yellow;
+    z-index: 5;
+    background-color: darkcyan;
+    
   }
   
   
