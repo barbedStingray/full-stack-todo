@@ -27,7 +27,7 @@ function ButtonBar(props) {
                     onChange={(e) => props.setSortingHat(e.target.value)}
                     id="sortSelect-style"
                 >
-                    <option>time entered...</option>
+                    <option>by ID</option>
                     <option value="alphabetAsc">A to Z</option>
                     <option value="priority">Priority</option>
                     <option value="complete">Complete</option>

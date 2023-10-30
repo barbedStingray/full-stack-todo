@@ -30,7 +30,7 @@ npm start
                 - GET request
             [X] Alphabetical Sort tab
                 - GET request
-            [ ] ID Sort tab
+            [x] ID Sort tab
                 - GET request
 
  - [x] form field to input your todo's

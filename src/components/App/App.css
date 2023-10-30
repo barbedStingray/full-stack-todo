@@ -114,7 +114,7 @@
               font-size: 12px;
               height: 2rem;
               margin-top: 5px;
-              flex-basis: 15%;
+              flex-basis: 10%;
             }
                 #add-task:hover {
                   color: whitesmoke;

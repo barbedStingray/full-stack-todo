@@ -56,10 +56,10 @@ function TaskItem(props) {
         <div id="task-item" className={props.task.complete ? 'completeItem' : 'incompleteItem'}>
             <div id="p-tags">
                 <p><span id="title-task">{props.task.title}</span></p>
-                <p>Priority: <span className="priorityColor">{props.task.priority}</span></p>
+                {props.task.complete ? <p>Complete!</p> : <p>Priority: <span className="priorityColor">{props.task.priority}</span></p> }
             </div>
             {/* <p>{props.task.date}</p> */}
-            <button id="complete-btn" onClick={completeHandler}>Mark Complete</button>
+            <button id="complete-btn" onClick={completeHandler}>{props.task.complete? 'Unmark Task' : 'Mark Complete'}</button>
             <button id="delete-btn" onClick={deleteHandler}>X</button>
         </div>
     )
