@@ -23,7 +23,7 @@ router.get('/', (req, res) => {
     console.log(`GET /todo server request made`);
 
     // SQL query text
-    let queryText = 'SELECT * FROM "taskdata";';
+    let queryText = 'SELECT * FROM "taskdata" ORDER BY "id" ASC;';
 
     pool.query(queryText).then((result) => {
         console.log('GET /todo Success from server/SQL');
@@ -40,7 +40,7 @@ router.get('/priority', (req, res) => {
     console.log('GET /priority request made');
 
     // SQL query text
-    let queryText = `SELECT * FROM "taskdata" ORDER BY "priority" ASC;`;
+    let queryText = `SELECT * FROM "taskdata" ORDER BY "priority" ASC, "title" ASC;`;
 
     pool.query(queryText).then((result) => {
         console.log('GET /priority success!');
@@ -64,6 +64,22 @@ router.get('/alphabetAsc', (req, res) => {
 
     }).catch((error) => {
         console.log(`GET /alphabetAsc error`, error);
+        res.sendStatus(500);
+    });
+});
+
+// *** GET response /todo/complete
+router.get('/complete', (req, res) => {
+    console.log(`GET /complete request`);
+
+    let queryText = `SELECT * FROM "taskdata" ORDER BY "complete" ASC, "title" ASC;`;
+
+    pool.query(queryText).then((result) => {
+        console.log(`GET /complete Success!`);
+        res.send(result.rows);
+
+    }).catch((error) => {
+        console.log(`GET /complete error`, error);
         res.sendStatus(500);
     });
 });
@@ -111,23 +127,25 @@ router.post('/', (req, res) => {
 
 // PUT response
 
-router.put('/:id', (res, req) => {
+router.put('/:id', (req, res) => {
     console.log('PUT /todo complete change', req.params);
+    // console.log(`the res:`, res);
+    // console.log(`the req:`, req);
 
-    // let queryText = `
-    //     UPDATE "taskdata"
-    //     SET "complete" = NOT "complete"
-    //     WHERE "id" = $1;
-    // `;
+    let queryText = `
+        UPDATE "taskdata"
+        SET "complete" = NOT "complete"
+        WHERE "id" = $1;
+    `;
 
-    // pool.query(queryText, [req.params.id])
-    //     .then((result) => {
-    //         console.log('success in PUT complete');
-    //         res.sendStatus(200);
-    //     }).catch((error) => {
-    //         console.log('error in PUT complete', error);
-    //         res.sendStatus(500);
-    //     });
+    pool.query(queryText, [req.params.id])
+        .then((result) => {
+            console.log('success in PUT complete');
+            res.sendStatus(200);
+        }).catch((error) => {
+            console.log('error in PUT complete', error);
+            res.sendStatus(500);
+        });
 });
 
 

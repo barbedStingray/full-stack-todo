@@ -57,6 +57,14 @@ function TaskForm (props) {
         });
     }
 
+    function formDisappear() {
+        console.log(`closing form`);
+      
+        props.setPopUpWindow(false);
+        console.log(`pop window:`, props.popUpWindow);
+      }
+      
+
     return (
             <div className={props.popUpWindow ? 'revealFormWindow' : 'hideFormWindow'} id="witch-form">
                 <div id="form-heading">
@@ -93,7 +101,7 @@ function TaskForm (props) {
                     </form>
                 </div>
                 <div id="disappear-btn">
-                    <button id="dButton-style" type="button" onClick={props.formDisappear}>Close</button>
+                    <button id="dButton-style" type="button" onClick={formDisappear}>Close</button>
                 </div>
             </div>
     )

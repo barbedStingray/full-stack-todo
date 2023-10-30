@@ -8,6 +8,7 @@ import TaskForm from '../TaskForm/TaskForm.jsx';
 import Header from '../Header/Header.jsx';
 import './App.css';
 import Footer from '../Footer/Footer.jsx';
+import ButtonBar from '../ButtonBar/ButtonBar.jsx';
 
 
 
@@ -18,8 +19,8 @@ function App () {
 // set initial constant for your List of Tasks... set to empty array.
   const [taskList, setTaskList] = useState([]);
   const [popUpWindow, setPopUpWindow] = useState(false);
+  const [sortingHat, setSortingHat] = useState('');
 
-  let sortingHat;
   console.log(`sortingHat:`, sortingHat);
 
 
@@ -51,8 +52,20 @@ function App () {
           alert(`/todo/alphabetAsc GET error`);
         });
     }
+    else if(sortingHat === 'complete') {
+      // GET /todo/complete
+        axios.get('todo/complete').then((response) => {
+          console.log(`GET /todo/complete response:`, response.data);
+
+          setTaskList(response.data);
+
+        }).catch((error) => {
+          console.log(`error GET /todo/complete`);
+          alert(`error GET /todo/complete`);
+        });
+    }
     else {
-      // *** GET /todo basic
+      // *** GET /todo basic "time entered... default"
         axios.get('/todo').then((response) => {
           console.log('GET /todo Match! response.data:', response.data);
 
@@ -72,43 +85,8 @@ function App () {
   }, []);
 
 
-
-
-  const sortingByPriority = () => {
-    console.log(`sorting list by priority`);
-
-// set your variable to direct your GET route
-    console.log(`sortingHat before:`, sortingHat);
-
-    sortingHat = 'priority';
-
-// call the props.function to recall list
-    getTaskList();
-
-}
-
-const sortingByAlphabetAsc = () => {
-  console.log(`sorting asc. alphabetically`);
-
-  sortingHat = 'alphabetAsc';
-
-  getTaskList();
-
-}
-
-
-
-
-
-
 // form window
 
-function formDisappear() {
-  console.log(`closing form`);
-
-  setPopUpWindow(false);
-  console.log(`pop window:`, popUpWindow);
-}
 
 
 
@@ -119,22 +97,26 @@ function formDisappear() {
   return (
     <div id="web-display">
       
-      <Header 
-          sortingHat={sortingHat} 
+      <Header />
+
+      <ButtonBar 
+          sortingHat={sortingHat}
+          setSortingHat={setSortingHat}
           getTaskList={getTaskList}
           popUpWindow={popUpWindow}
           setPopUpWindow={setPopUpWindow}
-          sortingByPriority={sortingByPriority}
-          sortingByAlphabetAsc={sortingByAlphabetAsc}
       />
       
-      <TaskForm getTaskList={getTaskList}
-                popUpWindow={popUpWindow}
-                setPopUpWindow={setPopUpWindow}
-                formDisappear={formDisappear} 
+      <TaskForm 
+          getTaskList={getTaskList}
+          popUpWindow={popUpWindow}
+          setPopUpWindow={setPopUpWindow}
       />
 
-      <TaskList list={taskList} getTaskList={getTaskList} />
+      <TaskList 
+          list={taskList} 
+          getTaskList={getTaskList} 
+      />
 
       <Footer />
 

@@ -53,7 +53,7 @@ function TaskItem(props) {
 
 // return necessary with curly brackets
     return (
-        <div id="task-item">
+        <div id="task-item" className={props.task.complete ? 'completeItem' : 'incompleteItem'}>
             <div id="p-tags">
                 <p><span id="title-task">{props.task.title}</span></p>
                 <p>Priority: <span className="priorityColor">{props.task.priority}</span></p>

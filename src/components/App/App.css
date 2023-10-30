@@ -53,71 +53,128 @@
                     margin-left: 30%;
                     font-size: 20px;
                   }
-            #header-buttons {
+                  /* Irrelevant DIV */
+            /* #header-buttons {
               display: flex;
               flex-direction: column;
-              /* border: 2px solid green;   */
               flex-grow: 2;
               justify-content: flex-end;
+            } */
+                  
+
+                    
+           
+  /* Start of the button bar */
+      #button-bar {
+        /* border: 2px solid green; */
+        display: flex;
+        flex-direction: row;
+        gap: 3%;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0.5rem;
+        padding-top: 1.5rem;
+        max-width: 100%;
+      }
+            #deleteTasks-btn {
+              border: 1px solid rgb(0, 0, 0, 0);
+              color: whitesmoke;
+              border-radius: 7px;
+              background-color: rgb(0, 0, 0, 0);
+              height: 2rem;
+              margin-top: 5px;
+              font-size: 12px;
+              flex-basis: 10%;
             }
-                  #priority-btn {
-                    border: 1px solid rgb(0, 0, 0, 0);
-                    color: whitesmoke;
-                    border-radius: 7px;
-                    background-color: rgb(0, 0, 0, 0);
-                    height: 30px;
-                    font-size: 12px;
-                    /* align-self: center; */
-                    /* flex-basis: 1; */
+                  #deleteTasks-btn:hover {
+                    color: black;
+                    background-image: linear-gradient(rgb(245, 245, 245, 0), rgb(245, 245, 245, 0.8));
                   }
-                      #priority-btn:hover {
-                        color: black;
-                        background-image: linear-gradient(rgb(245, 245, 245, 0), rgb(245, 245, 245, 0.8));
-                      }
 
-                  #alphabetical-btn {
-                    border: 1px solid rgb(0, 0, 0, 0);
-                    border-radius: 7px;
-                    background-color: rgb(0, 0, 0, 0);
-                    color: whitesmoke;
-                    height: 30px;
-                    font-size: 12px;
-                    /* align-self: center; */
-                    /* flex-basis: 1; */
+            #resetList-btn {
+              border: 1px solid rgb(0, 0, 0, 0);
+              color: whitesmoke;
+              border-radius: 7px;
+              background-color: rgb(0, 0, 0, 0);
+              height: 2rem;
+              margin-top: 5px;
+              font-size: 12px;
+              flex-basis: 10%;
+            }
+                  #resetList-btn:hover {
+                    color: black;
+                    background-image: linear-gradient(rgb(245, 245, 245, 0), rgb(245, 245, 245, 0.8));
                   }
-                      #alphabetical-btn:hover {
-                        color: black;
-                        background-image: linear-gradient(rgb(245, 245, 245, 0), rgb(245, 245, 245, 0.8));
-                      }
 
-                  #add-task {
-                    border: 1px solid rgb(0, 0, 0, 0);
-                    border-radius: 7px;
-                    background-color: rgb(0, 0, 0, 0);
-                    color: orangered;
-                    font-size: 12px;
-                    height: 30px;
+            #add-task {
+              border: 1px solid rgb(0, 0, 0, 0);
+              border-radius: 7px;
+              background-color: rgb(0, 0, 0, 0);
+              color: orangered;
+              font-size: 12px;
+              height: 2rem;
+              margin-top: 5px;
+              flex-basis: 15%;
+            }
+                #add-task:hover {
+                  color: whitesmoke;
+                  background-image: linear-gradient(rgb(97, 5, 5, 0), orangered);
+                }
+            
+            #sortSelect-style {
+              border: rgb(0, 0, 0, 0);
+              background-color: rgb(0, 0, 0, 0);
+              color: whitesmoke;
+              margin-top: 7px;
+              height: 1.65rem;
+              flex-basis: 10%;
+            }
 
-                    /* align-self: center; */
-                    /* flex-basis: 1; */
-                  }
-                      #add-task:hover {
-                        color: whitesmoke;
-                        background-image: linear-gradient(rgb(97, 5, 5, 0), orangered);
+            #sort-btn {
+              border: 1px solid rgb(0, 0, 0, 0);
+              color: whitesmoke;
+              border-radius: 7px;
+              background-color: rgb(0, 0, 0, 0);
+              height: 2rem;
+              margin-top: 5px;
+              font-size: 12px;
+              flex-basis: 5%;
+            }
+                #sort-btn:hover {
+                  color: black;
+                  background-image: linear-gradient(rgb(245, 245, 245, 0), rgb(245, 245, 245, 0.8));
+                }
 
-                      }
-                
+        /* END of the button bar! */
 
+
+
+
+
+
+  /* Start of Task Body */
       #task-list {
         /* border: lime 2px solid; */
         display: flex;
         flex-direction: column;
       }
-
-            #task-item {
+            /* unComplete Item */
+            .incompleteItem {
               /* border: green 2px solid; */
-              /* background-color: rgba(103, 81, 50, 0.3); */
               background-color: rgba(120, 132, 185, 0.3);
+              display: flex;
+              border-radius: 10px;
+              margin-top: 2%;
+              margin-left: 10%;
+              margin-right: 10%;
+              justify-content: space-evenly;
+              align-items: center;
+            }
+
+            /* complete Item */
+            .completeItem {
+              /* border: green 2px solid; */
+              background-color: rgba(103, 81, 50, 0.3);
               display: flex;
               border-radius: 10px;
               margin-top: 2%;
