@@ -17,9 +17,9 @@ function App () {
 
 // set initial constant for your List of Tasks... set to empty array.
   const [taskList, setTaskList] = useState([]);
-  const [sortingHat, setSortingHat] = useState('');
   const [popUpWindow, setPopUpWindow] = useState(false);
 
+  let sortingHat;
   console.log(`sortingHat:`, sortingHat);
 
 
@@ -73,6 +73,34 @@ function App () {
 
 
 
+
+  const sortingByPriority = () => {
+    console.log(`sorting list by priority`);
+
+// set your variable to direct your GET route
+    console.log(`sortingHat before:`, sortingHat);
+
+    sortingHat = 'priority';
+
+// call the props.function to recall list
+    getTaskList();
+
+}
+
+const sortingByAlphabetAsc = () => {
+  console.log(`sorting asc. alphabetically`);
+
+  sortingHat = 'alphabetAsc';
+
+  getTaskList();
+
+}
+
+
+
+
+
+
 // form window
 
 function formDisappear() {
@@ -93,10 +121,11 @@ function formDisappear() {
       
       <Header 
           sortingHat={sortingHat} 
-          setSortingHat={setSortingHat}
           getTaskList={getTaskList}
           popUpWindow={popUpWindow}
           setPopUpWindow={setPopUpWindow}
+          sortingByPriority={sortingByPriority}
+          sortingByAlphabetAsc={sortingByAlphabetAsc}
       />
       
       <TaskForm getTaskList={getTaskList}

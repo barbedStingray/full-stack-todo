@@ -37,7 +37,7 @@
             }
                   h1 {
                     font-family: witch-hunt;
-                    color: orangered;
+                    color: rgb(137, 7, 137);
                     letter-spacing: 4px;
                     font-size: 60px;
                     margin-top: 0px;
@@ -135,12 +135,16 @@
                   }
                         p {
                           /* border: darkred 2px solid; */
-                          color: orange;
+                          color: green;
                           margin-top: 1%;
                           margin-bottom: 1%;
                         }
-                        #span-color {
-                          color: darkred;
+                        #title-task {
+                          color: rgb(161, 45, 184);
+                          text-decoration: underline;
+                        }
+                        .priorityColor {
+                          color: rgb(175, 152, 21);
                         }
 
                   #complete-btn {
@@ -200,36 +204,85 @@
     height: 10%; */
     /* bottom: 0; */
     top: 5%;
-    left: 47%;
-    border: 3px solid purple;
+    left: 43%;
+    border: 8px solid whitesmoke;
+    border-radius: 20px;
     width: 30%;
     /* z-index: 5; */
-    background-color: darkcyan;
+    background-color: rgb(0, 0, 0, 0);
   }
         #form-heading {
-          color: blue;
-          border: 2px solid pink;
+          color: orangered;
+          /* border: 2px solid pink; */
+          margin-top: -20px;
+          margin-bottom: -20px;
+          text-align: center;
+          font-family: witch-hunt;
+          font-size: 1rem;
         }
         #form-entries {
           display: flex;
-          border: 2px solid greenyellow
+          /* border: 2px solid greenyellow; */
           /* flex-direction: column; */
-
+          justify-content: center;
         }
               #input-nameTask {
-                flex-direction: row;
                 color: blue;
-                border: 2px solid black;
+                /* border: 2px solid black; */
+                display: flex;
+                justify-content: center;
               }
-              #input-priorityTask {
-                border: 2px solid black;
+                    #input-style {
+                      border: silver solid 2px;
+                      background-color: black;
+                      text-align: center;
+                      color: whitesmoke;
+                      border-radius: 5px;
+                    }
 
+              #input-priorityTask {
+                /* border: 2px solid black; */
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
               }
+                    #select-style {
+                      border: rgb(0, 0, 0, 0);
+                      background-color: rgb(0, 0, 0, 0);
+                      color: whitesmoke;
+                    }
+
+              #post-task {
+                /* border: black 2px solid; */
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+              }
+                    #post-style {
+                      border: rgb(0, 0, 0, 0);
+                      background-color: rgb(0, 0, 0, 0);
+                      color: whitesmoke;
+                      font-size: 14px;
+                      border-radius: 4px;
+                    }
+                    #post-style:hover {
+                      background-image: linear-gradient(rgb(245, 245, 245, 0), rgb(245, 245, 245, 0.8));
+                    }
 
         #disappear-btn {
-          border: 2px solid black;
-
+          /* border: 2px solid lightblue; */
+          align-self: flex-end;
         }
+              #dButton-style {
+                border: rgb(0, 0, 0, 0);
+                background-color: rgb(0, 0, 0, 0);
+                color: whitesmoke;
+                font-size: 14px;
+                border-radius: 5px;
+              }
+              #dButton-style:hover {
+                background-image: linear-gradient(rgb(245, 245, 245, 0), rgb(245, 245, 245, 0.8));
+              }
   
   
   

@@ -55,8 +55,8 @@ function TaskItem(props) {
     return (
         <div id="task-item">
             <div id="p-tags">
-                <p><span id="span-color">Task:</span> {props.task.title}</p>
-                <p><span id="span-color">Priority:</span> {props.task.priority}</p>
+                <p><span id="title-task">{props.task.title}</span></p>
+                <p>Priority: <span className="priorityColor">{props.task.priority}</span></p>
             </div>
             {/* <p>{props.task.date}</p> */}
             <button id="complete-btn" onClick={completeHandler}>Mark Complete</button>

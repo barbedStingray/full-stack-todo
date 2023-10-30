@@ -60,13 +60,14 @@ function TaskForm (props) {
     return (
             <div className={props.popUpWindow ? 'revealFormWindow' : 'hideFormWindow'} id="witch-form">
                 <div id="form-heading">
-                    <h2>Task Details:</h2>
+                    <h2>New Task</h2>
                 </div>
                 <div id="form-entries">
                     <form onSubmit={sendTaskToServer}>
                         <div id="input-nameTask">
                             {/* Title:  */}
                                     <input 
+                                        id="input-style"
                                         value={nameTask} 
                                         onChange={(e) => setNameTask(e.target.value)} 
                                         placeholder={'your task here...'} 
@@ -77,6 +78,7 @@ function TaskForm (props) {
                             {/* Priority:  */}
                                     <select 
                                         // placeholder={'priority'}
+                                        id="select-style"
                                         onChange={(e) => setPriorityTask(e.target.value)}
                                         >
                                             <option value={''}>Select One...</option>
@@ -86,12 +88,12 @@ function TaskForm (props) {
                             {/* <p>{priorityTask}</p> */}
                         </div>
                     <div id="post-task">
-                        <button>Post Task</button>
+                        <button id="post-style">Post Task</button>
                     </div>
                     </form>
                 </div>
                 <div id="disappear-btn">
-                    <button type="button" onClick={props.formDisappear}>X</button>
+                    <button id="dButton-style" type="button" onClick={props.formDisappear}>Close</button>
                 </div>
             </div>
     )

@@ -23,24 +23,26 @@ npm start
  // ********   CLIENT SIDE   ******** // 
 
  - [ ] Title/Header of your ToDo List
-        - Create Title
-        - Add basic information
+        X Create Title
+        X Add basic information
         [ ] "select" bar for sorting (button headings)
-            [ ] Priority Sort tab
+            [X] Priority Sort tab
+                - GET request
+            [X] Alphabetical Sort tab
                 - GET request
             [ ] ID Sort tab
                 - GET request
 
- - [ ] form field to input your todo's
-        [ ] form field inputs
-            - input: title of task
-            - selectBox: priority rating
+ - [x] form field to input your todo's
+        [x] form field inputs
+            X input: title of task
+            X selectBox: priority rating
             - textArea: description 
-        [ ] Submit Button
-            - onClick/onSubmit function
-            - POST request to server
-            - Event handling
-            - preventDefault()
+        [x] Submit Button
+            x onClick/onSubmit function
+            x POST request to server
+            x Event handling
+            x preventDefault()
 
  - [ ] display all tasks on DOM
         [X] Populate the DOM
@@ -49,30 +51,30 @@ npm start
         [ ] display task on DOM
             x Title Display
             x make delete button
-            - make complete button
-            - Priority Display
+            x make complete button
+            x Priority Display
             - Description (hover?)
             [ ] Complete Button
-                - make button
+                x make button
                 - PUT request to server
                 - visual indication of complete
-            [ ] Delete Button
+            [x] Delete Button
                 x DELETE request to server
                 x remove from Database
-                - repopulate dom after delete
+                x repopulate dom after delete
 
 // *********   SERVER SIDE   ************ //
 
-[ ] Develop Database
-    [ ] table with desired columns
+[x] Develop Database
+    [x] table with desired columns
         x task name
         x date entered
         x complete
         
-[ ] GET queries can VIEW database
-[ ] POST queries can ADD TO database
+[x] GET queries can VIEW database
+[x] POST queries can ADD TO database
 [ ] PUT queries can UPDATE database
-[ ] DELETE queries can DELTE items of database
+[x] DELETE queries can DELTE items of database
 
  
 
@@ -81,12 +83,10 @@ npm start
 Bens Stretch Goals:
 
 - [ ] Theme your ToDo list
-        - Pick a Theme
-            - 20,000 tasks under the sea
-            - space cadet
+        x Pick a Theme
         - Investigate Color Scheme
-        - Add Background Image
-        - Css styling as appropriate
+        x Add Background Image
+        x Css styling as appropriate
 
  - [ ] Date submissions
         - date due, date added

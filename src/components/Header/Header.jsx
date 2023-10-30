@@ -4,26 +4,6 @@
 
 function Header(props) {
         
-    const sortingByPriority = (event) => {
-        console.log(`sorting list by priority`);
-
-    // set your variable to direct your GET route
-        console.log(`sortingHat`, props.sortingHat);
-        props.setSortingHat('priority');
-
-    // call the props.function to recall list
-        props.getTaskList();
-
-    }
-
-    const sortingByAlphabetAsc = (event) => {
-        console.log(`sorting asc. alphabetically`);
-
-        props.setSortingHat('alphabetAsc');
-
-        props.getTaskList();
-
-    }
 
     function formAppear() {
         console.log(`opening form`);
@@ -43,8 +23,8 @@ function Header(props) {
                 <h5>a to-do app...</h5>
             </div>
             <div id="header-buttons">
-                <button id="priority-btn" onClick={sortingByPriority}>Sort Priority</button>
-                <button id="alphabetical-btn" onClick={sortingByAlphabetAsc}>Sort A to Z</button>
+                <button id="priority-btn" onClick={props.sortingByPriority}>Sort Priority</button>
+                <button id="alphabetical-btn" onClick={props.sortingByAlphabetAsc}>Sort A to Z</button>
                 <button id="add-task" onClick={formAppear}>+Task</button>
             </div>
         </div>
