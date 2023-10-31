@@ -1,35 +1,61 @@
-
-
 CREATE TABLE "taskdata" (
 	"id" serial PRIMARY KEY,
 	"title" VARCHAR (100),
-	"date" DATE,
-	"complete" BOOLEAN DEFAULT FALSE);
+	"complete" BOOLEAN DEFAULT FALSE,
+	"priority" VARCHAR (10));
 		
 		
 -- POST request
-INSERT INTO "taskdata" ("title", "date")
+INSERT INTO "taskdata" ("title", "priority")
 VALUES 
-('Clean Room', '10/10/23'),
-('Do Homework', '10/11/23'),
-('Feed the Dog', '10/12/23'),
-('Wash the Car', '10/13/23'),
-('Do the Dishes', '10/14/23'),
-('Sweep the Floor', '10/15/23'),
-('Mow the Lawn', '10/16/23'),
-('Trim the Bushes', '10/17/23');
+('Groom the Bunny Slippers', 'low'),
+('Sort the Pointed Hats', 'low'),
+('Stir the Cauldron', 'high'),
+('Wash your Cape', 'high'),
+('Beware the Dog', 'low'),
+('Polish your Broom', 'low'),
+('Practice Bewitching Charms', 'low'),
+('Wand Care', 'high');
 
 
+-- manipulation for ORDER BY priority and title
+SELECT * FROM "taskdata" ORDER BY "priority", "title";
+
+-- Sort by Title Ascending
+SELECT * FROM "taskdata" ORDER BY "title" ASC;
+
+-- Sort by Priority high -> low
+SELECT * FROM "taskdata" ORDER BY "priority" ASC;
+
+-- sort by priority low -> high
+SELECT * FROM "taskdata" ORDER BY "priority" DESC;
+
+-- sort by complete or not
+SELECT * FROM "taskdata" ORDER BY "complete" ASC, "title" ASC;
+
+
+-- add a column
+ALTER TABLE "taskdata"
+ADD "priority" VARCHAR(10);
+
+ALTER TABLE "taskdata"
+DROP COLUMN "date";
 
 
 -- limits your displayed data
 SELECT * FROM "taskdata" LIMIT 2;
 
+-- DELETE / singular request 
+DELETE FROM "taskdata" WHERE "id" = 21;
 
--- PUT / request
+
+-- PUT / request "toggle Complete"
 UPDATE "taskdata"
-SET "complete" = TRUE
+SET "complete" = NOT "complete"
 WHERE "title" = 'Wash the Car';
+
+UPDATE "taskdata"
+SET "complete" = FALSE;
 
 -- GET / request
 SELECT * FROM "taskdata";
@@ -42,3 +68,4 @@ DELETE FROM "taskdata" WHERE "complete" = TRUE;
 
 -- eliminates the table
 DROP TABLE "taskdata";
+

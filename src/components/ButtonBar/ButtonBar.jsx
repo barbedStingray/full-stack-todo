@@ -60,13 +60,13 @@ function ButtonBar(props) {
                     onClick={resetListComplete}
                     >Reset List
                 </button>
-                
+
                 <button id="add-task" onClick={formAppear}>+Task</button>
 
                 <select
                     onChange={(e) => props.setSortingHat(e.target.value)}
                     id="sortSelect-style"
-                >
+                    >
                     <option>by ID</option>
                     <option value="alphabetAsc">A to Z</option>
                     <option value="priority">Priority</option>

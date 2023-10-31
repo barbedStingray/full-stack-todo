@@ -364,6 +364,18 @@ COLOR PALETTE
                 background-image: linear-gradient(rgb(245, 245, 245, 0), rgb(245, 245, 245, 0.8));
               }
   
+
+
+
+
+/* FOOTER DIV */
+
+#footer-div {
+  border: solid 2px blue;
+  margin: 2rem;
+  color: #707A50;
+  font-family: witch-hunt;
+}
   
   
   
