@@ -17,7 +17,7 @@ function TaskItem(props) {
         // PUT request
         // no object to pass
         console.log(props.task.id);
-        axios.put(`/todo/${props.task.id}`).then((response) => {
+        axios.put(`/todo/single/${props.task.id}`).then((response) => {
             console.log('success in PUT complete:', props.task.complete);
 
         // refresh your list
@@ -35,7 +35,7 @@ function TaskItem(props) {
         console.log(`DELETE /todo request for ${props.task.title}`);
 
         // run your axios request based on props.key
-        axios.delete(`/todo/${props.task.id}`).then(() => {
+        axios.delete(`/todo/single/${props.task.id}`).then(() => {
             console.log(`Delete /todo success!`);
 
 
@@ -55,8 +55,8 @@ function TaskItem(props) {
     return (
         <div id="task-item" className={props.task.complete ? 'completeItem' : 'incompleteItem'}>
             <div id="p-tags">
-                <p><span id="title-task">{props.task.title}</span></p>
-                {props.task.complete ? <p>Complete!</p> : <p>Priority: <span className="priorityColor">{props.task.priority}</span></p> }
+                {<p><span id="title-task">{props.task.title}</span></p>}
+                {props.task.complete ? <p>Complete!</p> : <p className={props.task.priority === 'low' ? 'lowPriorityColor' : 'highPriorityColor'}>{props.task.priority} priority</p> }
             </div>
             {/* <p>{props.task.date}</p> */}
             <button id="complete-btn" onClick={completeHandler}>{props.task.complete? 'Unmark Task' : 'Mark Complete'}</button>

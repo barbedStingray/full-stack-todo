@@ -127,7 +127,7 @@ router.post('/', (req, res) => {
 
 // PUT response
 
-router.put('/:id', (req, res) => {
+router.put('/single/:id', (req, res) => {
     console.log('PUT /todo complete change', req.params);
     // console.log(`the res:`, res);
     // console.log(`the req:`, req);
@@ -148,6 +148,24 @@ router.put('/:id', (req, res) => {
         });
 });
 
+// *** PUT /todo/resetAll
+router.put('/resetAll', (req, res) => {
+    console.log(`PUT /todo/resetAll running...`);
+
+    let queryText = `
+        UPDATE "taskdata"
+        SET "complete" = FALSE;
+    `;
+
+    pool.query(queryText).then((result) => {
+        console.log(`success in /todo/resetAll`);
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log(`error PUT /todo/resetAll`);
+        res.sendStatus(500);
+    });
+});
+
 
 
 
@@ -159,7 +177,7 @@ router.put('/:id', (req, res) => {
 
 // *** DELETE response
 
-router.delete('/:id', (req, res) => {
+router.delete('/single/:id', (req, res) => {
     console.log(`Delete /todo match! delete response:`, req.params);
 
     let queryText = `DELETE FROM "taskdata" WHERE "id" = $1;`;
@@ -177,6 +195,25 @@ router.delete('/:id', (req, res) => {
             res.sendStatus(500);
         });
 });
+
+// *** DELETE /todo/deleteAll response
+
+router.delete('/deleteAll', (req, res) => {
+    console.log(`Delete /todo/deleteAll match!`);
+
+    // no passing of params
+
+    let queryText = `DELETE FROM "taskdata";`;
+
+    pool.query(queryText).then((result) => {
+        console.log(`/deleteAll success`);
+        res.sendStatus(201);
+    }).catch((error) => {
+        console.log(`/deleteAll ERROR`, error);
+        res.sendStatus(500);
+    });
+});
+
 
 
 

@@ -1,4 +1,14 @@
 
+/* 
+COLOR PALETTE
+  #B725FA (primary purple)
+  #8A50A5 (secondary purple)
+  #9EBA4A (primary green)
+  #C3F926 (highlight green)
+  #707A50 (secondary green)
+
+*/
+
 
 /* IMPORTS */
 @font-face {
@@ -37,7 +47,7 @@
             }
                   h1 {
                     font-family: witch-hunt;
-                    color: rgb(137, 7, 137);
+                    color: #B725FA;
                     letter-spacing: 4px;
                     font-size: 60px;
                     margin-top: 0px;
@@ -47,7 +57,7 @@
                   h5 {
                     font-family: witch-hunt;
                     /* border: 2px solid red; */
-                    color: silver;
+                    color: #9EBA4A;
                     margin-top: 0px;
                     margin-bottom: 0px;
                     margin-left: 30%;
@@ -110,15 +120,15 @@
               border: 1px solid rgb(0, 0, 0, 0);
               border-radius: 7px;
               background-color: rgb(0, 0, 0, 0);
-              color: orangered;
+              color: #C3F926;
               font-size: 12px;
               height: 2rem;
               margin-top: 5px;
               flex-basis: 10%;
             }
                 #add-task:hover {
-                  color: whitesmoke;
-                  background-image: linear-gradient(rgb(97, 5, 5, 0), orangered);
+                  color: black;
+                  background-image: linear-gradient(rgb(97, 5, 5, 0), #C3F926);
                 }
             
             #sortSelect-style {
@@ -160,8 +170,7 @@
       }
             /* unComplete Item */
             .incompleteItem {
-              /* border: green 2px solid; */
-              background-color: rgba(120, 132, 185, 0.3);
+              background-color: rgba(120, 132, 185, 0.25);
               display: flex;
               border-radius: 10px;
               margin-top: 2%;
@@ -174,7 +183,8 @@
             /* complete Item */
             .completeItem {
               /* border: green 2px solid; */
-              background-color: rgba(103, 81, 50, 0.3);
+              background-color: #8A50A520;
+
               display: flex;
               border-radius: 10px;
               margin-top: 2%;
@@ -197,17 +207,20 @@
                           margin-bottom: 1%;
                         }
                         #title-task {
-                          color: rgb(161, 45, 184);
-                          text-decoration: underline;
+                          color: #B725FA;
+                          /* text-decoration: underline; */
                         }
-                        .priorityColor {
-                          color: rgb(175, 152, 21);
+                        .lowPriorityColor {
+                          color: #707A50;
+                        }
+                        .highPriorityColor {
+                          color: #C3F926;
                         }
 
                   #complete-btn {
                     border: rgb(0, 0, 0, 0);
                     background-color: rgb(0, 0, 0, 0);
-                    color: rgb(53, 205, 53);
+                    color: #9EBA4A;
                     font-size: 12px;
                     width: 100px;
                     height: 30px;
@@ -216,14 +229,14 @@
                     border-radius: 7px;
                   }
                       #complete-btn:hover {
-                        background-image: linear-gradient(rgba(3, 50, 3, 0), rgba(5, 142, 5, 0.8));
-                        color: whitesmoke;
+                        background-image: linear-gradient(rgba(3, 50, 3, 0), #C3F926);
+                        color: #C3F926;
                       }
 
                   #delete-btn {
                     border: rgb(0, 0, 0, 0);
                     background-color: rgb(0, 0, 0, 0);
-                    color: orangered;
+                    color: #8A50A5;
                     font-size: 12px;
                     width: 40px;
                     height: 25px;
@@ -232,13 +245,23 @@
                     border-radius: 7px;
                   }
                       #delete-btn:hover {
-                        background-image: linear-gradient(rgba(3, 50, 3, 0), rgba(122, 11, 11, 0.8));
-
+                        background-image: linear-gradient(rgba(3, 50, 3, 0), #B725FA);
+                        color: #B725FA;
                       }
 
-                  
+               
+                      
+    /* 
+COLOR PALETTE
+  #B725FA (primary purple)
+  #8A50A5 (secondary purple)
+  #9EBA4A (primary green)
+  #C3F926 (highlight green)
+  #707A50 (secondary green)
 
-  /* modal stuff */
+*/
+
+
 
   
   /* css to hide your form */
@@ -260,16 +283,16 @@
     /* width: 80%;
     height: 10%; */
     /* bottom: 0; */
-    top: 5%;
-    left: 43%;
-    border: 8px solid whitesmoke;
+    top: 30%;
+    left: 35%;
+    border: 10px solid #707A50;
     border-radius: 20px;
     width: 30%;
     /* z-index: 5; */
-    background-color: rgb(0, 0, 0, 0);
+    background-color: rgb(0, 0, 0);
   }
         #form-heading {
-          color: orangered;
+          color: #C3F926;
           /* border: 2px solid pink; */
           margin-top: -20px;
           margin-bottom: -20px;

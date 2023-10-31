@@ -22,10 +22,10 @@ npm start
  
  // ********   CLIENT SIDE   ******** // 
 
- - [ ] Title/Header of your ToDo List
+ - [x] Title/Header of your ToDo List
         X Create Title
         X Add basic information
-        [ ] "select" bar for sorting (button headings)
+        [x] "select" bar for sorting (button headings)
             [X] Priority Sort tab
                 - GET request
             [X] Alphabetical Sort tab
@@ -48,16 +48,16 @@ npm start
         [X] Populate the DOM
             x GET request
             x display of SQL table
-        [ ] display task on DOM
+        [x] display task on DOM
             x Title Display
             x make delete button
             x make complete button
             x Priority Display
             - Description (hover?)
-            [ ] Complete Button
+            [x] Complete Button
                 x make button
-                - PUT request to server
-                - visual indication of complete
+                x PUT request to server
+                x visual indication of complete
             [x] Delete Button
                 x DELETE request to server
                 x remove from Database
