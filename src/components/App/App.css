@@ -18,7 +18,7 @@ COLOR PALETTE
 
 @font-face {
   font-family: halloween;
-  src: url(../../fonts/HelpMe.ttf);
+  src: url(../../fonts/Halloween.ttf);
 }
 
 
@@ -368,14 +368,86 @@ COLOR PALETTE
 
 
 
+          /* 
+COLOR PALETTE
+  #B725FA (primary purple)
+  #8A50A5 (secondary purple)
+  #9EBA4A (primary green)
+  #C3F926 (highlight green)
+  #707A50 (secondary green)
+
+*/
+
+
 /* FOOTER DIV */
 
 #footer-div {
-  border: solid 2px blue;
+  border-top: solid 2px #B725FA88;
   margin: 2rem;
+  padding-top: 1rem;
   color: #707A50;
   font-family: witch-hunt;
+  display: flex;
+  flex-direction: row;
 }
+
+      #witch-quote {
+        /* border: 2px solid green; */
+        flex-grow: 4;
+        max-width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #copy-right {
+        /* border: 2px solid yellow; */
+        flex-grow: 1;
+        display: flex;
+        flex-direction: row;
+      }
+
+            #copy-text {
+              /* border: 2px solid lightblue; */
+              flex-grow: 1;
+              font-family: Halloween;
+              font-size: 25px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: flex-end;
+              margin-right: 0.5rem;
+            }
+                  #footerText-style {
+                    color: #C3F92688;
+
+                  }
+
+            #copy-image {
+              /* border: 2px solid lightcoral; */
+              flex-grow: 1;
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+            }
+
+                  #stingray-logo {
+                    width: 75px;
+                    height: 75px;
+                    opacity: 0.3;
+                  }
+
+
+                  h4 {
+                    margin-top: -5px;
+                    margin-bottom: -5px;
+                    font-size: 20px;
+                    color:#707A5000;
+                    transition: 1s;
+                  }
+                      h4:hover {
+                        color:#707A50;
+                      }
   
   
   
