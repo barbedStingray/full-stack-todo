@@ -1,0 +1,93 @@
+
+  /* css to hide your form */
+  .hideFormWindow {
+    display: none;
+    position: fixed;
+    border: 5px solid lightblue;
+  }
+
+  /* css to diplay your form as a pop up */
+  /* This is the witch-form DIV */
+  .revealFormWindow {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 30%;
+    left: 35%;
+    border: 10px solid #707A50;
+    border-radius: 20px;
+    width: 30%;
+    background-color: rgb(0, 0, 0);
+  }
+        #form-heading {
+          color: #C3F926;
+          /* border: 2px solid pink; */
+          margin-top: -20px;
+          margin-bottom: -20px;
+          text-align: center;
+          font-family: witch-hunt;
+          font-size: 1rem;
+        }
+        #form-entries {
+          display: flex;
+          /* border: 2px solid greenyellow; */
+          /* flex-direction: column; */
+          justify-content: center;
+        }
+              #input-nameTask {
+                color: blue;
+                /* border: 2px solid black; */
+                display: flex;
+                justify-content: center;
+              }
+                    #input-style {
+                      border: silver solid 2px;
+                      background-color: black;
+                      text-align: center;
+                      color: whitesmoke;
+                      border-radius: 5px;
+                    }
+
+              #input-priorityTask {
+                /* border: 2px solid black; */
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+              }
+                    #select-style {
+                      border: rgb(0, 0, 0, 0);
+                      background-color: rgb(0, 0, 0, 0);
+                      color: whitesmoke;
+                    }
+
+              #post-task {
+                /* border: black 2px solid; */
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+              }
+                    #post-style {
+                      border: rgb(0, 0, 0, 0);
+                      background-color: rgb(0, 0, 0, 0);
+                      color: whitesmoke;
+                      font-size: 14px;
+                      border-radius: 4px;
+                    }
+                    #post-style:hover {
+                      background-image: linear-gradient(rgb(245, 245, 245, 0), rgb(245, 245, 245, 0.8));
+                    }
+
+        #disappear-btn {
+          /* border: 2px solid lightblue; */
+          align-self: flex-end;
+        }
+              #dButton-style {
+                border: rgb(0, 0, 0, 0);
+                background-color: rgb(0, 0, 0, 0);
+                color: whitesmoke;
+                font-size: 14px;
+                border-radius: 5px;
+              }
+              #dButton-style:hover {
+                background-image: linear-gradient(rgb(245, 245, 245, 0), rgb(245, 245, 245, 0.8));
+              }

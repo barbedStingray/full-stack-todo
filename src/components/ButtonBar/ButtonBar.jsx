@@ -1,9 +1,14 @@
 
+// Imports
 import axios from 'axios';
-// component for button bar
+import './ButtonBar.css';
 
+
+// ButtonBar
 function ButtonBar(props) {
 
+
+// Input Form Display = True
     function formAppear() {
         console.log(`opening form`);
       
@@ -11,12 +16,14 @@ function ButtonBar(props) {
         console.log(`pop window:`, props.popUpWindow);
     }
 
+// Sort Function - Sort <Button>
     const sortTheSortingHat = () => {
         console.log(`sorting the sortingHat:`, props.sortingHat);
       
         props.getTaskList();
       }
 
+// Delete All Tasks - DELETE /todo/deleteAll
     const deleteAllTasks = () => {
         console.log(`deleting ALL tasks`);
 
@@ -31,6 +38,7 @@ function ButtonBar(props) {
         });
     }
 
+// Reset All Tasks - PUT /todo/resetAll
     const resetListComplete = () => {
         console.log(`resetting todo tasks to incomplete`);
 
@@ -44,7 +52,6 @@ function ButtonBar(props) {
             alert(`/todo/resetAll Error`);
         });
     }
-
 
     return (
         <div id="button-bar">

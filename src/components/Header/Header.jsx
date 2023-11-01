@@ -1,15 +1,16 @@
 
-// header Component
+// Imports
+import './Header.css';
 
-
-function Header(props) {
+// Header
+function Header() {
         
 
     return (
         <div id="task-header">
             <div id="title-words">
                 <h1>Witch Hunt</h1>
-                <h5>a to-do app...</h5>
+                <h5>a Halloween to-do app...</h5>
             </div>
 
         </div>

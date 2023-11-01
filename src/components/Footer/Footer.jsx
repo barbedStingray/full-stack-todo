@@ -1,7 +1,10 @@
 
+// Imports
 import barbedStingray from '../../Photos/stingray.png';
-// footer component
+import './Footer.css';
 
+
+// Footer
 function Footer() {
 
     return (
@@ -9,7 +12,7 @@ function Footer() {
             <div id="witch-quote">
                 <h4>A cackle in the night</h4>
                 <h4>A black cat on the stair</h4>
-                <h4>the Jackolamnters laugh</h4>
+                <h4>the Jackolanters laugh</h4>
                 <h4>you mortals, BEWARE</h4>
             </div>
             <div id="copy-right">

@@ -1,24 +1,22 @@
 
-// Task Form Component
-
+// Imports
 import { useState } from 'react';
 import axios from 'axios';
+import './TaskForm.css';
 
-
+// TaskForm
 function TaskForm (props) {
 
-// create your variables
-    const [nameTask, setNameTask] = useState('');
-    const [priorityTask, setPriorityTask] = useState('');
+// useState variables
+    const [nameTask, setNameTask] = useState(''); // two way data binding for task name
+    const [priorityTask, setPriorityTask] = useState(''); // two way data binding for priority
 
 
-// *** POST FUNCTION
-
+// Add new form Item - POST /todo
     const sendTaskToServer = (event) => {
         event.preventDefault();
         console.log('POST /todo made');
 
-    // verification of variable
         console.log(`in sendTaskToServer`, nameTask);
         console.log(`in sendTaskToServer`, priorityTask);
 
@@ -29,16 +27,10 @@ function TaskForm (props) {
         };
         console.log(`taskObject:`, taskObject);
 
-    // axios post request
         axios.post('/todo', taskObject).then((response) => {
 
     // clear your inputs, objects and variables
         setNameTask('');
-
-    // make your form Disappear
-        props.setPopUpWindow(false);
-
-    // setPriorityTask(''); // clears the variable, but does not reset select
 
         taskObject = {
             title: '',
@@ -46,25 +38,26 @@ function TaskForm (props) {
         }
         console.log(`cleared taskObject:`, taskObject);
 
+    // make your form Disappear
+        props.setPopUpWindow(false);
 
-    // fetch the getTaskList function 
+    // fetch getTaskList 
         props.getTaskList();
     
-
         }).catch((error) => {
             console.log(`/todo POST error`);
             alert(`/todo POST error`);
         });
     }
 
-    function formDisappear() {
+// Input Form Display = False
+function formDisappear() {
         console.log(`closing form`);
       
         props.setPopUpWindow(false);
         console.log(`pop window:`, props.popUpWindow);
       }
       
-
     return (
             <div className={props.popUpWindow ? 'revealFormWindow' : 'hideFormWindow'} id="witch-form">
                 <div id="form-heading">

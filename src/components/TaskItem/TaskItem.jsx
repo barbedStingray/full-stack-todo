@@ -1,26 +1,22 @@
 
-// TaskItem component
 
-// *** IMPORTS ***
-import axios from 'axios'; // axios import
-// import getTaskList from '../App/App.jsx'; // getTaskList() import
+// Imports
+import axios from 'axios';
 import './TaskItem.css';
 
-
-
+// TaskItem
 function TaskItem(props) {
 
-// PUT COMPLETE button execution /todo
+// Marks task as complete - PUT /todo/single/:id 
     const completeHandler = () => {
         console.log(`COMPLETE put /todo request for ${props.task.title}`);
 
-        // PUT request
-        // no object to pass
+     // no object to pass
         console.log(props.task.id);
         axios.put(`/todo/single/${props.task.id}`).then((response) => {
             console.log('success in PUT complete:', props.task.complete);
 
-        // refresh your list
+    // refresh your list
         props.getTaskList();
 
         }).catch((error) => {
@@ -30,18 +26,15 @@ function TaskItem(props) {
     }
 
 
-// DELETE button execution
+// Deletes a task from the list - DELETE /todo/single/:id
     const deleteHandler = () => {
         console.log(`DELETE /todo request for ${props.task.title}`);
 
-        // run your axios request based on props.key
         axios.delete(`/todo/single/${props.task.id}`).then(() => {
             console.log(`Delete /todo success!`);
 
-
         // refresh the dom here
             props.getTaskList();
-
 
         }).catch((error) => {
             console.log(`Delete /todo Error`);
@@ -50,8 +43,6 @@ function TaskItem(props) {
     }
 
 
-
-// return necessary with curly brackets
     return (
         <div id="task-item" className={props.task.complete ? 'completeItem' : 'incompleteItem'}>
             <div id="p-tags">
@@ -60,12 +51,10 @@ function TaskItem(props) {
                     <p>Complete!</p> : 
                     <p className={props.task.priority === 'low' ? 'lowPriorityColor' : 'highPriorityColor'}>{props.task.priority} priority</p> }
             </div>
-            {/* <p>{props.task.date}</p> */}
             <button id="complete-btn" onClick={completeHandler}>{props.task.complete? 'Unmark Task' : 'Mark Complete'}</button>
             <button id="delete-btn" onClick={deleteHandler}>X</button>
         </div>
     )
 }
 
-// export your component
 export default TaskItem;

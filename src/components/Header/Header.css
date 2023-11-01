@@ -1,0 +1,32 @@
+
+
+#task-header {
+    /* border: pink 2px solid; */
+    display: flex;
+    flex-direction: row;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+  }
+        #title-words {
+          /* border: 2px solid orange; */
+          flex-grow: 10;
+        }
+              h1 {
+                font-family: witch-hunt;
+                color: #B725FA;
+                letter-spacing: 4px;
+                font-size: 60px;
+                margin-top: 0px;
+                margin-bottom: -7%;
+                /* border: 2px solid red; */
+              }
+              h5 {
+                font-family: witch-hunt;
+                /* border: 2px solid red; */
+                color: #9EBA4A;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                margin-left: 30%;
+                font-size: 20px;
+              }

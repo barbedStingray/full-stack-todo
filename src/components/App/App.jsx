@@ -1,14 +1,20 @@
 
-// *** IMPORTS 
+// Imports
 
-import {useState, useEffect} from 'react';
+// hardware?
+import {useState, useEffect} from 'react'; 
 import axios from 'axios';
-import TaskList from '../TaskList/TaskList.jsx';
-import TaskForm from '../TaskForm/TaskForm.jsx';
+
+// components
 import Header from '../Header/Header.jsx';
-import './App.css';
-import Footer from '../Footer/Footer.jsx';
 import ButtonBar from '../ButtonBar/ButtonBar.jsx';
+import TaskForm from '../TaskForm/TaskForm.jsx';
+import TaskList from '../TaskList/TaskList.jsx';  
+import Footer from '../Footer/Footer.jsx';
+
+// styles
+import './App.css';
+
 
 
 
@@ -16,15 +22,15 @@ import ButtonBar from '../ButtonBar/ButtonBar.jsx';
 
 function App () {
 
-// set initial constant for your List of Tasks... set to empty array.
-  const [taskList, setTaskList] = useState([]);
-  const [popUpWindow, setPopUpWindow] = useState(false);
-  const [sortingHat, setSortingHat] = useState('');
+// useState variables
+  const [taskList, setTaskList] = useState([]); // display array to dom
+  const [popUpWindow, setPopUpWindow] = useState(false); // used to trigger input form
+  const [sortingHat, setSortingHat] = useState(''); // used to sort the list
 
   console.log(`sortingHat:`, sortingHat);
 
 
-// GET REQUEST function ***********
+// *** GET REQUEST  
   function getTaskList () {
     console.log(`GET /todo request made`);
 
@@ -78,21 +84,11 @@ function App () {
   }
 }
 
-// call your function
-// remember this takes two objects (don't forget empty array)
+// function call: your object / []
   useEffect(() => {
     getTaskList();
   }, []);
 
-
-// form window
-
-
-
-
-
-
-// return to populate DOM
 
   return (
     <div id="web-display">
@@ -121,10 +117,7 @@ function App () {
       <Footer />
 
     </div>
-
-    
   );
-
 }
 
 export default App

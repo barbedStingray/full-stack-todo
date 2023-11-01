@@ -1,0 +1,85 @@
+
+
+#button-bar {
+    /* border: 2px solid green; */
+    display: flex;
+    flex-direction: row;
+    gap: 3%;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0.5rem;
+    padding-top: 1.5rem;
+    max-width: 100%;
+  }
+        #deleteTasks-btn {
+          border: 1px solid #f5f5f588;
+          color: whitesmoke;
+          border-radius: 7px;
+          background-color: rgb(0, 0, 0, 0);
+          height: 2rem;
+          margin-top: 5px;
+          font-size: 12px;
+          flex-basis: 10%;
+          transition: 0.5s;
+        }
+              #deleteTasks-btn:hover {
+                color: black;
+                background-image: linear-gradient(rgb(245, 245, 245, 0), rgb(245, 245, 245, 0.8));
+              }
+
+        #resetList-btn {
+          border: 1px solid #f5f5f588;
+          color: whitesmoke;
+          border-radius: 7px;
+          background-color: rgb(0, 0, 0, 0);
+          height: 2rem;
+          margin-top: 5px;
+          font-size: 12px;
+          flex-basis: 10%;
+          transition: 0.5s;
+        }
+              #resetList-btn:hover {
+                color: black;
+                background-image: linear-gradient(rgb(245, 245, 245, 0), rgb(245, 245, 245, 0.8));
+              }
+
+        #add-task {
+          border: 1px solid #C3F92688;
+          border-radius: 7px;
+          background-color: rgb(0, 0, 0, 0);
+          color: #C3F926;
+          font-size: 12px;
+          height: 2rem;
+          margin-top: 5px;
+          flex-basis: 10%;
+          transition: 0.5s;
+        }
+            #add-task:hover {
+              color: black;
+              background-image: linear-gradient(rgb(97, 5, 5, 0), #C3F926);
+            }
+        
+        #sortSelect-style {
+          /* border: #f5f5f5; */
+          background-color: rgb(0, 0, 0, 0);
+          color: #f5f5f5BB;
+          margin-top: 7px;
+          height: 1.65rem;
+          flex-basis: 10%;
+        }
+
+        #sort-btn {
+          border: 1px solid #f5f5f588;
+          color: whitesmoke;
+          border-radius: 7px;
+          background-color: rgb(0, 0, 0, 0);
+          height: 2rem;
+          margin-top: 5px;
+          font-size: 12px;
+          flex-basis: 5%;
+          transition: 0.5s;
+        }
+            #sort-btn:hover {
+              color: black;
+              background-image: linear-gradient(rgb(245, 245, 245, 0), rgb(245, 245, 245, 0.8));
+            }
