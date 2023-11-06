@@ -1,28 +1,16 @@
 
 // ** this is the /todo route!
 
+// Imports
 const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool.js');
 
 
-
-
-
-
-
-
-
-
-
-
-// *** GET response /todo
-
-// draws data from SQL to the Server, passes data to Client
+// GET response /todo
 router.get('/', (req, res) => {
     console.log(`GET /todo server request made`);
 
-    // SQL query text
     let queryText = 'SELECT * FROM "taskdata" ORDER BY "id" ASC;';
 
     pool.query(queryText).then((result) => {
@@ -35,11 +23,10 @@ router.get('/', (req, res) => {
     });
 });
 
-// *** GET response /todo/priority
+// GET response /todo/priority
 router.get('/priority', (req, res) => {
     console.log('GET /priority request made');
 
-    // SQL query text
     let queryText = `SELECT * FROM "taskdata" ORDER BY "priority" ASC, "title" ASC;`;
 
     pool.query(queryText).then((result) => {
@@ -52,7 +39,7 @@ router.get('/priority', (req, res) => {
     });
 });
 
-// *** GET response /todo/alphabetAsc
+// GET response /todo/alphabetAsc
 router.get('/alphabetAsc', (req, res) => {
     console.log(`GET /alphabetAsc request`);
 
@@ -68,7 +55,7 @@ router.get('/alphabetAsc', (req, res) => {
     });
 });
 
-// *** GET response /todo/complete
+// GET response /todo/complete
 router.get('/complete', (req, res) => {
     console.log(`GET /complete request`);
 
@@ -92,13 +79,7 @@ router.get('/complete', (req, res) => {
 
 
 
-
-
-
-
-
-// *** POST response
-
+// POST response /todo
 router.post('/', (req, res) => {
     console.log(`/todo POST found, req.body:`, req.body);
 
@@ -107,7 +88,6 @@ router.post('/', (req, res) => {
     VALUES ($1, $2);
     `;
 
-    // access database
     pool.query(queryText, [req.body.title, req.body.priority])
         .then((result) => {
             console.log(`/todo POST success`);
@@ -125,8 +105,8 @@ router.post('/', (req, res) => {
 
 
 
-// PUT response
 
+// PUT response /todo/single/:id
 router.put('/single/:id', (req, res) => {
     console.log('PUT /todo complete change', req.params);
     // console.log(`the res:`, res);
@@ -148,7 +128,7 @@ router.put('/single/:id', (req, res) => {
         });
 });
 
-// *** PUT /todo/resetAll
+// PUT /todo/resetAll
 router.put('/resetAll', (req, res) => {
     console.log(`PUT /todo/resetAll running...`);
 
@@ -173,10 +153,7 @@ router.put('/resetAll', (req, res) => {
 
 
 
-
-
-// *** DELETE response
-
+// DELETE response /todo/single/:id
 router.delete('/single/:id', (req, res) => {
     console.log(`Delete /todo match! delete response:`, req.params);
 
@@ -186,22 +163,16 @@ router.delete('/single/:id', (req, res) => {
 
         .then((result) => {
             console.log(`Delete /todo success!`);
-            // send your success so client can run .then
             res.sendStatus(200);
-        // add your .catch
         }).catch((error) => {
             console.log(`Delete Error /todo`);
-            // send your error to the client to run .catch
             res.sendStatus(500);
         });
 });
 
-// *** DELETE /todo/deleteAll response
-
+// DELETE response /todo/deleteAll
 router.delete('/deleteAll', (req, res) => {
     console.log(`Delete /todo/deleteAll match!`);
-
-    // no passing of params
 
     let queryText = `DELETE FROM "taskdata";`;
 
@@ -213,10 +184,6 @@ router.delete('/deleteAll', (req, res) => {
         res.sendStatus(500);
     });
 });
-
-
-
-
 
 module.exports = router;
 

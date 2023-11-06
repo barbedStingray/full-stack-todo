@@ -1,3 +1,6 @@
+
+// ** SQL TABLE CREATION ** 
+
 CREATE TABLE "taskdata" (
 	"id" serial PRIMARY KEY,
 	"title" VARCHAR (100),
@@ -8,15 +11,22 @@ CREATE TABLE "taskdata" (
 -- POST request
 INSERT INTO "taskdata" ("title", "priority")
 VALUES 
-('Groom the Bunny Slippers', 'low'),
-('Sort the Pointed Hats', 'low'),
+('Practice your cackle', 'low'),
+('Sort Pointed Hats', 'low'),
 ('Stir the Cauldron', 'high'),
-('Wash your Cape', 'high'),
+('Wash your Cape', 'low'),
 ('Beware the Dog', 'low'),
-('Polish your Broom', 'low'),
-('Practice Bewitching Charms', 'low'),
+('Polish your Broom', 'high'),
+('Bewitching Charms', 'low'),
 ('Wand Care', 'high');
 
+// ** SQL TABLE CREATION ** 
+
+
+
+
+
+// ** OTHER SQL FUNCTIONS
 
 -- manipulation for ORDER BY priority and title
 SELECT * FROM "taskdata" ORDER BY "priority", "title";
@@ -68,4 +78,3 @@ DELETE FROM "taskdata" WHERE "complete" = TRUE;
 
 -- eliminates the table
 DROP TABLE "taskdata";
-

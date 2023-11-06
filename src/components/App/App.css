@@ -10,6 +10,7 @@ COLOR PALETTE
 */
 
 
+
 /* IMPORTS */
 @font-face {
   font-family: witch-hunt;
@@ -20,6 +21,19 @@ COLOR PALETTE
   font-family: halloween;
   src: url(../../fonts/Halloween.ttf);
 }
+
+@keyframes markComplete {
+  from { background-color: #7884b940; }
+  to { background-color: #8A50A520; }
+}
+
+@keyframes unMark {
+  from { background-color: #8A50A520; }
+  to { background-color: #7884b940; }
+
+}
+
+
 
 
 #web-display {

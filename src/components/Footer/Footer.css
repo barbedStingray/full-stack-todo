@@ -54,7 +54,7 @@
                       width: 75px;
                       height: 75px;
                       opacity: 0.3;
-                      transition: 2s;
+                      transition: 1s;
                     }
                     #stingray-logo:hover {
                       opacity: 0;

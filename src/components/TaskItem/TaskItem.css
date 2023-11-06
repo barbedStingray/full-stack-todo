@@ -1,12 +1,11 @@
 
 #task-list {
-    /* border: lime 2px solid; */
     display: flex;
     flex-direction: column;
   }
         /* unComplete Item */
         .incompleteItem {
-          background-color: rgba(120, 132, 185, 0.25);
+          background-color: #7884b940;
           display: flex;
           border-radius: 10px;
           margin-top: 2%;
@@ -14,13 +13,13 @@
           margin-right: 10%;
           justify-content: space-evenly;
           align-items: center;
+          animation: unMark 0.5s;
+
         }
 
         /* complete Item */
         .completeItem {
-          /* border: green 2px solid; */
           background-color: #8A50A520;
-
           display: flex;
           border-radius: 10px;
           margin-top: 2%;
@@ -28,6 +27,8 @@
           margin-right: 10%;
           justify-content: space-evenly;
           align-items: center;
+          animation: markComplete 0.5s;
+
         }
 
               #p-tags {
